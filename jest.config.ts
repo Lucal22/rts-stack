@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   coverageDirectory: 'coverage',
   collectCoverage: false,
   collectCoverageFrom: [
@@ -17,8 +17,9 @@ module.exports = {
   ],
   testPathIgnorePatterns: ['/node_modules/', '/.next/', '/.out/', '/public/'],
   setupFilesAfterEnv: ['<rootDir>/.jest/jest-setup.ts'],
-  // transform: {
-  //   // '\\.tsx?$': 'ts-jest',
-  //   '\\.jsx?$': 'babel-jest',
-  // },
+  transform: {
+    //'^.+\\.(t|j)sx?$': ['@swc/jest'],
+    '\\.tsx?$': 'ts-jest',
+    '\\.[jt]sx?$': 'babel-jest',
+  },
 };
